@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aapki Pooja – आपकी पूजा | Indore's Finest Ethnic Wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Sans+Devanagari:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --magenta: #C2185B;
+    --magenta-deep: #880E4F;
+    --magenta-light: #F48FB1;
+    --gold: #B8860B;
+    --gold-light: #D4AF37;
+    --gold-pale: #FFF8E1;
+    --cream: #FDF6EC;
+    --white: #FFFFFF;
+    --charcoal: #1A1A1A;
+    --muted: #6B5B5B;
+    --border: rgba(180,100,120,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ========== LANGUAGE BAR ========== */
+  .lang-bar {
+    background: var(--magenta-deep);
+    padding: 7px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.5px;
+  }
+  .lang-bar span { display: flex; align-items: center; gap: 6px; }
+  .lang-switcher {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 3px 5px;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: all 0.25s;
+    letter-spacing: 0.4px;
+  }
+  .lang-btn.active {
+    background: var(--gold-light);
+    color: var(--magenta-deep);
+    font-weight: 600;
+  }
+
+  /* ========== HEADER / NAV ========== */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(194,24,91,0.08);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--magenta), var(--magenta-deep));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 14px rgba(194,24,91,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-mark::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(212,175,55,0.5);
+  }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--magenta-deep);
+    letter-spacing: 0.5px;
+  }
+  .logo-hi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  nav { display: flex; align-items: center; gap: 32px; }
+  nav a {
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: color 0.2s;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--magenta);
+    transition: width 0.25s;
+  }
+  nav a:hover { color: var(--magenta); }
+  nav a:hover::after { width: 100%; }
+
+  .header-actions { display: flex; align-items: center; gap: 18px; }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--charcoal);
+    transition: color 0.2s;
+    font-size: 18px;
+    position: relative;
+  }
+  .icon-btn:hover { color: var(--magenta); }
+  .cart-badge {
+    position: absolute;
+    top: 0; right: 0;
+    background: var(--magenta);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--magenta), var(--magenta-deep));
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(194,24,91,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(194,24,91,0.4);
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FDF0F5 0%, #FDF6EC 40%, #FFF8F0 100%);
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C2185B' fill-opacity='1'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  .hero-blob {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    right: -100px;
+    top: -100px;
+    background: radial-gradient(ellipse, rgba(194,24,91,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-blob2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: -50px;
+    bottom: -50px;
+    background: radial-gradient(ellipse, rgba(212,175,55,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+  .hero-left { animation: fadeInLeft 0.9s ease forwards; }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(194,24,91,0.08);
+    border: 1px solid rgba(194,24,91,0.2);
+    color: var(--magenta);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  .hero-title span { color: var(--magenta); font-style: italic; }
+  .hero-title-hi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--magenta-deep);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    display: none;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 38px;
+    max-width: 440px;
+  }
+  .hero-sub-hi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 38px;
+    max-width: 440px;
+    display: none;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-outline {
+    background: none;
+    border: 1.5px solid var(--magenta);
+    color: var(--magenta);
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    background: var(--magenta);
+    color: white;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .stat { display: flex; flex-direction: column; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--magenta);
+  }
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-right {
+    position: relative;
+    animation: fadeInRight 0.9s ease forwards;
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .hero-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .hero-img-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .hero-img-card:first-child {
+    grid-row: 1 / 3;
+    grid-column: 1;
+  }
+  .hero-img-card img, .hero-img-card .img-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 20px;
+    min-height: 200px;
+  }
+  .img-placeholder .emoji { font-size: 36px; }
+
+  .card-tall { background: linear-gradient(160deg, #AD1457, #880E4F); min-height: 400px; }
+  .card-sm1 { background: linear-gradient(135deg, #E91E8C, #C2185B); min-height: 185px; }
+  .card-sm2 { background: linear-gradient(135deg, #B8860B, #D4AF37); min-height: 185px; }
+
+  .float-tag {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .float-tag-name { font-size: 11px; font-weight: 700; color: var(--charcoal); }
+  .float-tag-price { font-size: 14px; font-weight: 700; color: var(--magenta); }
+
+  .hero-decor {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 24px rgba(184,134,11,0.4);
+    line-height: 1.3;
+  }
+
+  /* ========== MARQUEE STRIP ========== */
+  .marquee-strip {
+    background: linear-gradient(90deg, var(--magenta-deep), var(--magenta), var(--magenta-deep));
+    padding: 13px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .marquee-inner span { margin: 0 30px; }
+  .marquee-dot { color: var(--gold-light); }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ========== SECTION COMMONS ========== */
+  section { padding: 90px 40px; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .section-title em { color: var(--magenta); font-style: italic; }
+  .section-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ========== CATEGORIES ========== */
+  .categories { background: white; }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .cat-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    group: true;
+  }
+  .cat-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(194,24,91,0.18); }
+  .cat-visual {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cat-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+  }
+  .cat-c1 { background: linear-gradient(135deg, #F8BBD0, #E91E8C); }
+  .cat-c2 { background: linear-gradient(135deg, #FFCC80, #B8860B); }
+  .cat-c3 { background: linear-gradient(135deg, #CE93D8, #7B1FA2); }
+  .cat-c4 { background: linear-gradient(135deg, #80DEEA, #006064); }
+  .cat-c5 { background: linear-gradient(135deg, #EF9A9A, #C62828); }
+  .cat-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 16px;
+    z-index: 2;
+    color: white;
+  }
+  .cat-label strong { display: block; font-size: 14px; font-weight: 700; }
+  .cat-label span { font-size: 11px; opacity: 0.85; }
+  .cat-emoji { position: relative; z-index: 1; }
+
+  /* ========== FEATURED PRODUCTS ========== */
+  .products { background: var(--cream); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--border);
+  }
+  .product-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(194,24,91,0.14); }
+  .product-img {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+  }
+  .product-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(194,24,91,0.05) 0%, transparent 50%);
+  }
+  .p-bg1 { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); }
+  .p-bg2 { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
+  .p-bg3 { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
+  .p-bg4 { background: linear-gradient(135deg, #FBE9E7, #FFCCBC); }
+  .p-bg5 { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+  .p-bg6 { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+  .p-bg7 { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+  .p-bg8 { background: linear-gradient(135deg, #FCE4EC, #F48FB1); }
+
+  .product-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--magenta);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  .product-wishlist {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    z-index: 2;
+  }
+  .product-wishlist:hover { transform: scale(1.1); }
+
+  .product-info { padding: 16px 18px 18px; }
+  .product-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+  .product-fabric {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .product-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .price-current {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--magenta);
+    font-family: 'Playfair Display', serif;
+  }
+  .price-old {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+  .add-cart-btn {
+    background: linear-gradient(135deg, var(--magenta), var(--magenta-deep));
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .add-cart-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(194,24,91,0.35);
+  }
+  .product-colors {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+  .color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .color-dot:hover { transform: scale(1.2); }
+
+  /* ========== BANNER ========== */
+  .banner-section {
+    background: linear-gradient(135deg, var(--magenta-deep) 0%, var(--magenta) 50%, #AD1457 100%);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .banner-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(255,255,255,0.04)' fill-rule='evenodd'%3E%3Ccircle cx='20' cy='20' r='12'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 40px 40px;
+  }
+  .banner-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .banner-left { color: white; }
+  .banner-left .section-eyebrow { color: var(--gold-light); }
+  .banner-left .section-title { color: white; }
+  .banner-left .section-sub { color: rgba(255,255,255,0.8); }
+  .banner-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .banner-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    color: white;
+    transition: background 0.3s;
+  }
+  .banner-card:hover { background: rgba(255,255,255,0.2); }
+  .banner-card .icon { font-size: 32px; margin-bottom: 10px; display: block; }
+  .banner-card strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .banner-card span { font-size: 12px; opacity: 0.8; }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonials { background: white; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--cream);
+    border-radius: 18px;
+    padding: 28px 26px;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  .review-card:hover { box-shadow: 0 8px 32px rgba(194,24,91,0.1); }
+  .stars { color: var(--gold-light); font-size: 14px; margin-bottom: 14px; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+  .av1 { background: linear-gradient(135deg, var(--magenta), var(--magenta-deep)); }
+  .av2 { background: linear-gradient(135deg, var(--gold), var(--gold-light)); }
+  .av3 { background: linear-gradient(135deg, #7B1FA2, #CE93D8); }
+  .reviewer-info strong { display: block; font-size: 13px; font-weight: 700; }
+  .reviewer-info span { font-size: 11px; color: var(--muted); }
+
+  /* ========== INSTAGRAM FEED ========== */
+  .insta-section { background: var(--cream); }
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .insta-tile {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+  .insta-tile:hover { transform: scale(1.03); }
+  .insta-tile::after {
+    content: '📸';
+    position: absolute;
+    inset: 0;
+    background: rgba(194,24,91,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .insta-tile:hover::after { opacity: 1; }
+  .it1 { background: linear-gradient(135deg, #F48FB1, #E91E8C); }
+  .it2 { background: linear-gradient(135deg, #FFCC80, #FB8C00); }
+  .it3 { background: linear-gradient(135deg, #CE93D8, #8E24AA); }
+  .it4 { background: linear-gradient(135deg, #80CBC4, #00695C); }
+  .it5 { background: linear-gradient(135deg, #FFAB91, #E64A19); }
+  .it6 { background: linear-gradient(135deg, #F06292, #AD1457); }
+  .insta-handle {
+    text-align: center;
+    font-size: 15px;
+    color: var(--magenta);
+    font-weight: 600;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.75);
+    padding: 70px 40px 30px;
+  }
+  .footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 50px;
+  }
+  .footer-brand .logo-en { color: white; font-size: 22px; }
+  .footer-brand .logo-hi { color: var(--gold-light); font-size: 13px; }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .social-icon:hover {
+    background: var(--magenta);
+    border-color: var(--magenta);
+  }
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--magenta-light); }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-bottom span { color: var(--magenta-light); }
+
+  /* ========== HINDI MODE ========== */
+  body.lang-hindi .en-text { display: none !important; }
+  body.lang-hindi .hi-text { display: block !important; }
+  body.lang-hindi .hero-title { display: none; }
+  body.lang-hindi .hero-title-hi { display: block; }
+  body.lang-hindi .hero-sub { display: none; }
+  body.lang-hindi .hero-sub-hi { display: block; }
+
+  .hi-text { display: none; }
+
+  /* ========== MOBILE ========== */
+  @media (max-width: 900px) {
+    section { padding: 60px 20px; }
+    .header-inner { padding: 0 20px; }
+    nav { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-right { display: none; }
+    .categories-grid { grid-template-columns: repeat(3, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .banner-inner { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .lang-bar { padding: 7px 20px; font-size: 11px; }
+  }
+  @media (max-width: 600px) {
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========== SCROLL ANIMATION ========== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ========== WHATSAPP FLOAT ========== */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #25D366;
+    color: white;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.2s;
+    animation: pulse 2s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span>✨ <span class="en-text">Free shipping on orders above ₹999 | Indore's Favourite Ethnic Brand</span><span class="hi-text" style="display:none;">₹999 से ऊपर के ऑर्डर पर मुफ़्त शिपिंग | इंदौर का पसंदीदा एथनिक ब्रांड</span></span>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
+    <button class="lang-btn" onclick="setLang('hi')" id="btn-hi">हिन्दी</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">🌸</div>
+      <div class="logo-text">
+        <span class="logo-en">Aapki Pooja</span>
+        <span class="logo-hi">आपकी पूजा</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#categories" class="en-text">Collections</a>
+      <a href="#categories" class="hi-text" style="display:none;">संग्रह</a>
+      <a href="#products" class="en-text">New Arrivals</a>
+      <a href="#products" class="hi-text" style="display:none;">नए आगमन</a>
+      <a href="#" class="en-text">Ethnics</a>
+      <a href="#" class="hi-text" style="display:none;">एथनिक्स</a>
+      <a href="#" class="en-text">Sale</a>
+      <a href="#" class="hi-text" style="display:none;">सेल</a>
+      <a href="#" class="en-text">About</a>
+      <a href="#" class="hi-text" style="display:none;">हमारे बारे में</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">♡</button>
+      <button class="icon-btn" style="position:relative;">
+        🛒
+        <span class="cart-badge">2</span>
+      </button>
+      <a href="https://wa.me/918770605958" target="_blank" class="btn-primary en-text">Contact Us</a>
+      <a href="https://wa.me/918770605958" target="_blank" class="btn-primary hi-text" style="display:none;">संपर्क करें</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">✨ <span class="en-text">Indore's #1 Ethnic Brand</span><span class="hi-text" style="display:none;">इंदौर का #1 एथनिक ब्रांड</span></div>
+
+      <h1 class="hero-title">
+        Celebrate Every<br>Moment in <span>Style</span>
+      </h1>
+      <h1 class="hero-title-hi">हर पल को<br>खूबसूरती से मनाएं</h1>
+
+      <p class="hero-sub">
+        Born from Pooja's dream — India's most loved ethnic wear, handcrafted for women who celebrate every occasion with grace and joy.
+      </p>
+      <p class="hero-sub-hi">
+        पूजा के सपने से जन्मी — भारत की सबसे पसंदीदा एथनिक वियर, हर मौके के लिए बनाई गई।
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary en-text">Shop Now</a>
+        <a href="#products" class="btn-primary hi-text" style="display:none;">अभी खरीदें</a>
+        <a href="#categories" class="btn-outline en-text">View Collections</a>
+        <a href="#categories" class="btn-outline hi-text" style="display:none;">संग्रह देखें</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">198K+</span>
+          <span class="stat-lbl en-text">Followers</span>
+          <span class="stat-lbl hi-text" style="display:none;">फ़ॉलोअर्स</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4.9★</span>
+          <span class="stat-lbl en-text">Rating</span>
+          <span class="stat-lbl hi-text" style="display:none;">रेटिंग</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1531+</span>
+          <span class="stat-lbl en-text">Happy Customers</span>
+          <span class="stat-lbl hi-text" style="display:none;">खुश ग्राहक</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-img-grid">
+        <div class="hero-img-card card-tall">
+          <div class="img-placeholder">
+            <span class="emoji">👘</span>
+            <strong>Bridal Lehenga</strong>
+            <span>New Collection 2025</span>
+          </div>
+          <div class="float-tag">
+            <span class="float-tag-name">Bridal Lehenga</span>
+            <span class="float-tag-price">From ₹4,999</span>
+          </div>
+        </div>
+        <div class="hero-img-card card-sm1">
+          <div class="img-placeholder">
+            <span class="emoji">🥻</span>
+            <strong>Silk Sarees</strong>
+          </div>
+          <div class="float-tag">
+            <span class="float-tag-name">Silk Saree</span>
+            <span class="float-tag-price">₹1,299</span>
+          </div>
+        </div>
+        <div class="hero-img-card card-sm2">
+          <div class="img-placeholder">
+            <span class="emoji">👗</span>
+            <strong>Kurtis</strong>
+          </div>
+          <div class="float-tag">
+            <span class="float-tag-name">Festive Kurti</span>
+            <span class="float-tag-price">₹799</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-decor">NEW<br>2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>✨ New Arrivals</span><span class="marquee-dot">♦</span>
+    <span>Silk Sarees</span><span class="marquee-dot">♦</span>
+    <span>Bridal Lehengas</span><span class="marquee-dot">♦</span>
+    <span>Festive Kurtis</span><span class="marquee-dot">♦</span>
+    <span>नए आगमन</span><span class="marquee-dot">♦</span>
+    <span>शादी के लिए लहंगे</span><span class="marquee-dot">♦</span>
+    <span>Salwar Suits</span><span class="marquee-dot">♦</span>
+    <span>Designer Dupattas</span><span class="marquee-dot">♦</span>
+    <span>✨ New Arrivals</span><span class="marquee-dot">♦</span>
+    <span>Silk Sarees</span><span class="marquee-dot">♦</span>
+    <span>Bridal Lehengas</span><span class="marquee-dot">♦</span>
+    <span>Festive Kurtis</span><span class="marquee-dot">♦</span>
+    <span>नए आगमन</span><span class="marquee-dot">♦</span>
+    <span>शादी के लिए लहंगे</span><span class="marquee-dot">♦</span>
+    <span>Salwar Suits</span><span class="marquee-dot">♦</span>
+    <span>Designer Dupattas</span><span class="marquee-dot">♦</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow en-text">Shop by Category</span>
+      <span class="section-eyebrow hi-text" style="display:none;">श्रेणी के अनुसार खरीदें</span>
+      <h2 class="section-title en-text">Explore Our <em>Collections</em></h2>
+      <h2 class="section-title hi-text" style="display:none;">हमारे <em>संग्रह</em> देखें</h2>
+      <p class="section-sub en-text">From everyday elegance to bridal grandeur — find your perfect ethnic look</p>
+      <p class="section-sub hi-text" style="display:none;">रोज़ाना की सुंदरता से लेकर शादी की भव्यता तक</p>
+    </div>
+    <div class="categories-grid reveal">
+      <div class="cat-card">
+        <div class="cat-visual cat-c1"><span class="cat-emoji">🥻</span></div>
+        <div class="cat-label">
+          <strong class="en-text">Sarees</strong>
+          <strong class="hi-text" style="display:none;">साड़ियाँ</strong>
+          <span>200+ Styles</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cat-c2"><span class="cat-emoji">👘</span></div>
+        <div class="cat-label">
+          <strong class="en-text">Lehengas</strong>
+          <strong class="hi-text" style="display:none;">लहंगे</strong>
+          <span>Bridal & Party</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cat-c3"><span class="cat-emoji">👗</span></div>
+        <div class="cat-label">
+          <strong class="en-text">Kurtis</strong>
+          <strong class="hi-text" style="display:none;">कुर्तियाँ</strong>
+          <span>Casual & Festive</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cat-c4"><span class="cat-emoji">🩱</span></div>
+        <div class="cat-label">
+          <strong class="en-text">Salwar Suits</strong>
+          <strong class="hi-text" style="display:none;">सलवार सूट</strong>
+          <span>Cotton & Silk</span>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-visual cat-c5"><span class="cat-emoji">✨</span></div>
+        <div class="cat-label">
+          <strong class="en-text">Dupattas</strong>
+          <strong class="hi-text" style="display:none;">दुपट्टे</strong>
+          <span>Designer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow en-text">New Arrivals</span>
+      <span class="section-eyebrow hi-text" style="display:none;">नए आगमन</span>
+      <h2 class="section-title en-text">Handpicked for <em>You</em></h2>
+      <h2 class="section-title hi-text" style="display:none;">आपके लिए <em>चुने गए</em></h2>
+      <p class="section-sub en-text">The finest fabrics, the most celebrated designs — celebrate every occasion beautifully</p>
+      <p class="section-sub hi-text" style="display:none;">बेहतरीन कपड़े, सबसे मशहूर डिजाइन — हर अवसर को खूबसूरत बनाएं</p>
+    </div>
+    <div class="products-grid reveal">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img p-bg1">
+          <span>🥻</span>
+          <span class="product-tag">NEW</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Kanjivaram Silk Saree</h3>
+          <p class="product-fabric">Pure Silk • Zari Work</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#C2185B;"></div>
+            <div class="color-dot" style="background:#B8860B;"></div>
+            <div class="color-dot" style="background:#4A148C;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹2,499</span><span class="price-old">₹3,999</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img p-bg2">
+          <span>👘</span>
+          <span class="product-tag" style="background:var(--gold);">BESTSELLER</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Bridal Lehenga Set</h3>
+          <p class="product-fabric">Velvet & Net • Heavy Embroidery</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#B71C1C;"></div>
+            <div class="color-dot" style="background:#880E4F;"></div>
+            <div class="color-dot" style="background:#1A237E;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹8,999</span><span class="price-old">₹14,000</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img p-bg3">
+          <span>👗</span>
+          <span class="product-tag">TRENDING</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Anarkali Kurti Set</h3>
+          <p class="product-fabric">Georgette • Printed</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#7B1FA2;"></div>
+            <div class="color-dot" style="background:#C2185B;"></div>
+            <div class="color-dot" style="background:#00695C;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹1,199</span><span class="price-old">₹1,999</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img p-bg4">
+          <span>🩱</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Designer Salwar Suit</h3>
+          <p class="product-fabric">Cotton Silk • Block Print</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#BF360C;"></div>
+            <div class="color-dot" style="background:#33691E;"></div>
+            <div class="color-dot" style="background:#01579B;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹1,599</span><span class="price-old">₹2,500</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img p-bg5">
+          <span>🥻</span>
+          <span class="product-tag" style="background:#2E7D32;">ORGANIC</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Chanderi Cotton Saree</h3>
+          <p class="product-fabric">Handwoven • Madhya Pradesh</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#388E3C;"></div>
+            <div class="color-dot" style="background:#C2185B;"></div>
+            <div class="color-dot" style="background:#F57F17;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹999</span><span class="price-old">₹1,799</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-img p-bg6">
+          <span>👘</span>
+          <span class="product-tag">NEW</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Indo-Western Gown</h3>
+          <p class="product-fabric">Chiffon • Sequence Work</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#0277BD;"></div>
+            <div class="color-dot" style="background:#AD1457;"></div>
+            <div class="color-dot" style="background:#4E342E;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹3,499</span><span class="price-old">₹5,500</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 7 -->
+      <div class="product-card">
+        <div class="product-img p-bg7">
+          <span>✨</span>
+          <span class="product-tag" style="background:var(--gold);">FESTIVE</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Banarasi Silk Dupatta</h3>
+          <p class="product-fabric">Pure Banarasi • Zari Border</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#F9A825;"></div>
+            <div class="color-dot" style="background:#C2185B;"></div>
+            <div class="color-dot" style="background:#283593;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹699</span><span class="price-old">₹1,200</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 8 -->
+      <div class="product-card">
+        <div class="product-img p-bg8">
+          <span>👗</span>
+          <span class="product-tag">HOT 🔥</span>
+          <button class="product-wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <h3>Sharara Set</h3>
+          <p class="product-fabric">Chiffon • Mirror Work</p>
+          <div class="product-colors">
+            <div class="color-dot" style="background:#C2185B;"></div>
+            <div class="color-dot" style="background:#6A1B9A;"></div>
+            <div class="color-dot" style="background:#E65100;"></div>
+          </div>
+          <div class="product-pricing">
+            <div><span class="price-current">₹2,199</span><span class="price-old">₹3,500</span></div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US BANNER -->
+<div class="banner-section">
+  <div class="banner-inner">
+    <div class="banner-left">
+      <span class="section-eyebrow">Why Aapki Pooja?</span>
+      <h2 class="section-title" style="color:white;">Born From <em style="color:var(--gold-light);">A Dream,</em><br>Built With Love</h2>
+      <p class="section-sub">From a small boutique in Indore to 198K+ followers — every piece we craft carries Pooja's vision of making every Indian woman feel like a queen.</p>
+      <br>
+      <a href="https://wa.me/918770605958" target="_blank" class="btn-primary" style="background: var(--gold-light); color: var(--magenta-deep);">WhatsApp Us 💬</a>
+    </div>
+    <div class="banner-right">
+      <div class="banner-card">
+        <span class="icon">🚚</span>
+        <strong>Free Shipping</strong>
+        <span>On orders above ₹999 across India</span>
+      </div>
+      <div class="banner-card">
+        <span class="icon">💎</span>
+        <strong>Premium Quality</strong>
+        <span>Handpicked fabrics, verified designs</span>
+      </div>
+      <div class="banner-card">
+        <span class="icon">🔄</span>
+        <strong>Easy Returns</strong>
+        <span>7-day hassle-free return policy</span>
+      </div>
+      <div class="banner-card">
+        <span class="icon">⭐</span>
+        <strong>4.9★ Rated</strong>
+        <span>1531+ verified customer reviews</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Customer Love</span>
+      <h2 class="section-title">What Our <em>Queens</em> Say</h2>
+      <p class="section-sub">Real stories from real women who celebrate life in Aapki Pooja</p>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Got my bridal lehenga from Aapki Pooja and it was absolutely stunning! Every guest at my wedding wanted to know where I bought it. Quality is unmatched at this price!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av1">P</div>
+          <div class="reviewer-info">
+            <strong>Priya Sharma</strong>
+            <span>Indore, MP ✓ Verified Buyer</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Ordered a Chanderi saree for Diwali — it arrived beautifully packaged and the fabric quality was exactly as described. Will keep coming back! Pooja madam has great taste 🌸"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av2">A</div>
+          <div class="reviewer-info">
+            <strong>Anjali Verma</strong>
+            <span>Bhopal, MP ✓ Verified Buyer</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The Anarkali set I bought fits perfectly and the colours are so vibrant. Customer service was very helpful too. This is now my go-to shop for all ethnic wear. Highly recommend!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av3">N</div>
+          <div class="reviewer-info">
+            <strong>Nisha Patel</strong>
+            <span>Ujjain, MP ✓ Verified Buyer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="insta-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Instagram</span>
+      <h2 class="section-title">Follow Our <em>Story</em></h2>
+      <p class="section-sub">Join 198K+ women celebrating style every day @aapkipooja.in</p>
+    </div>
+    <div class="insta-grid reveal">
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it1"><span>🥻</span></a>
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it2"><span>👘</span></a>
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it3"><span>👗</span></a>
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it4"><span>🩱</span></a>
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it5"><span>✨</span></a>
+      <a href="https://instagram.com/aapkipooja.in" target="_blank" class="insta-tile it6"><span>🌸</span></a>
+    </div>
+    <p class="insta-handle">📸 @aapkipooja.in &nbsp;•&nbsp; @aapkipooja.ethnics</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text" style="margin-bottom: 4px;">
+        <span class="logo-en" style="font-family:'Playfair Display',serif;font-size:22px;color:white;">Aapki Pooja</span>
+        <span class="logo-hi" style="color:var(--gold-light);font-size:13px;font-family:'Noto Sans Devanagari',sans-serif;">आपकी पूजा</span>
+      </div>
+      <p>Born from Pooja's dream, inspired by YOU ✨<br>Indore's favourite destination for shopping.<br>Celebrate every moment in style 🌺</p>
+      <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.4);">📍 Vijay Nagar, Indore – 452010, MP</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);">📞 +91 87706 05958</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/aapkipooja.in" target="_blank" class="social-icon">📸</a>
+        <a href="https://wa.me/918770605958" target="_blank" class="social-icon">💬</a>
+        <a href="https://instagram.com/aapkipooja.ethnics" target="_blank" class="social-icon">🌸</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Sarees</a></li>
+        <li><a href="#">Lehengas</a></li>
+        <li><a href="#">Kurtis</a></li>
+        <li><a href="#">Salwar Suits</a></li>
+        <li><a href="#">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">@aapkipooja.in</a></li>
+        <li><a href="#">@aapkipooja.ethnics</a></li>
+        <li><a href="https://wa.me/918770605958">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Aapki Pooja. All rights reserved. | Made with <span>♥</span> in Indore</span>
+    <span>Secure Payments: UPI · Card · Net Banking · COD</span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/918770605958" target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+  // Language switcher
+  function setLang(lang) {
+    const body = document.body;
+    const btnEn = document.getElementById('btn-en');
+    const btnHi = document.getElementById('btn-hi');
+    
+    if (lang === 'hi') {
+      body.classList.add('lang-hindi');
+      btnHi.classList.add('active');
+      btnEn.classList.remove('active');
+      // Show hi-text, hide en-text
+      document.querySelectorAll('.hi-text').forEach(el => el.style.display = 'block');
+      document.querySelectorAll('.en-text').forEach(el => el.style.display = 'none');
+      // Fix inline-flex elements
+      document.querySelectorAll('.hi-text.hero-badge, .hi-text.btn-primary, .hi-text.btn-outline').forEach(el => el.style.display = 'inline-flex');
+    } else {
+      body.classList.remove('lang-hindi');
+      btnEn.classList.add('active');
+      btnHi.classList.remove('active');
+      document.querySelectorAll('.en-text').forEach(el => el.style.display = '');
+      document.querySelectorAll('.hi-text').forEach(el => el.style.display = 'none');
+    }
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Wishlist toggle
+  document.querySelectorAll('.product-wishlist').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = btn.textContent === '♡' ? '❤️' : '♡';
+    });
+  });
+
+  // Cart count
+  let cartCount = 2;
+  document.querySelectorAll('.add-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      cartCount++;
+      document.querySelector('.cart-badge').textContent = cartCount;
+      btn.textContent = '✓ Added!';
+      btn.style.background = 'linear-gradient(135deg,#2E7D32,#388E3C)';
+      setTimeout(() => {
+        btn.textContent = 'Add to Cart';
+        btn.style.background = '';
+      }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
